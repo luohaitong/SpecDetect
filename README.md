@@ -1,0 +1,45 @@
+# SpecDetect: Simple, Fast, and Training-Free Detection of LLM-Generated Text via Spectral Analysis (AAAI 26 Main Track Oral)
+This project provides the **initial version** of the source code for SpecDetect, a simple, fast, and training-free method for detecting LLM-generated text based on spectral analysis. Our method embeds the core implementation of Lastde (from [Lastde](https://github.com/TrustMedia-zju/Lastde_Detector)), and we sincerely thank the developers of the Lastde project for their open-source contribution.
+
+> **Note**: This is the initial release of the SpecDetect codebase. We will update it with more complete implementations and detailed documentation in subsequent versions.
+
+## Environment
+The key dependencies of our experimental environment are as follows:
+- Python 3.8
+- Pytorch 2.0.0
+- Other dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+## Code Structure & Implementation
+The core logic of SpecDetect is organized in the following directories:
+- `shell_scripts`: Contains executable scripts for triggering detection experiments (white-box/black-box settings).
+- `py_scripts`: Includes core implementation code for spectral analysis, detection pipelines, and data processing (inherited and extended from Lastde).
+
+### Run Detection
+You can run the detection experiments via the scripts in `shell_scripts` (consistent with Lastde's execution mode):
+```shell
+cd shell_scripts
+
+# White-box detection
+./detection_white_box.sh 
+
+# Black-box detection
+./detection_black_box.sh
+```
+Detection results will be saved in the `experiment_results` directory (with subdirectories corresponding to different experimental settings).
+
+## Acknowledgements
+We are grateful to the authors of [Lastde](https://github.com/TrustMedia-zju/Lastde_Detector) for their open-source code and insightful research. Their work laid the foundation for the implementation of SpecDetect.
+
+## Citation
+If you find SpecDetect useful in your research, please cite our paper:
+```bibtex
+@article{luo2025specdetect,
+  title={SpecDetect: Simple, Fast, and Training-Free Detection of LLM-Generated Text via Spectral Analysis},
+  author={Luo, Haitong and Zhang, Weiyao and Wang, Suhang and Zou, Wenji and Lin, Chungang and Meng, Xuying and Zhang, Yujun},
+  journal={arXiv preprint arXiv:2508.11343},
+  year={2025}
+}
+```
